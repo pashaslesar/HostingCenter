@@ -1,0 +1,12 @@
+.btn {
+    @apply px-4 py-2 rounded-md duration-150 cursor-pointer flex items-center justify-center whitespace-nowrap
+    disabled:cursor-not-allowed disabled:opacity-75;
+}
+
+.btn-blue {
+    @apply bg-blue-500 hover:bg-blue-300 text-white;
+}
+
+.btn-disabled {
+    @apply opacity-75 cursor-not-allowed;
+}

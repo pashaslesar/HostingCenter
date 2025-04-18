@@ -1,0 +1,10 @@
+- errors
+- find location for types
+- types
+- generate safe password button
+- password strenght input
+- email exists input
+- 2fa
+- recaptcha
+- terms and condidtions
+- logout

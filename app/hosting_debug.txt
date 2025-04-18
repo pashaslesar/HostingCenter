@@ -1,0 +1,37 @@
+{
+    "user": "OK",
+    "body": {
+        "domain": "kllgrhrjtjt.cz",
+        "plan": "basic"
+    },
+    "domain_with_tld": [
+        "kllgrhrjtjt",
+        "cz"
+    ],
+    "hosting_saved": true,
+    "redis_class": "Predis\\Client",
+    "messages": {
+        "hostingMessage": {
+            "operation": "Worker\\DnsManager::addHostsfileRecord",
+            "args": {
+                "domain": "kllgrhrjtjt",
+                "hosts_record": "XXX kllgrhrjtjt.cz #user=30"
+            }
+        },
+        "domainMessage": {
+            "operation": "Worker\\HttpManager::createHttpFile",
+            "args": {
+                "domain": "kllgrhrjtjt",
+                "tld": "cz",
+                "plan": "basic"
+            }
+        },
+        "dbMessage": {
+            "operation": "Worker\\DatabaseManager::createDatabase",
+            "args": {
+                "domain": "kllgrhrjtjt",
+                "tld": "cz"
+            }
+        }
+    }
+}
