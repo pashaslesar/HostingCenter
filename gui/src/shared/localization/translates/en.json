@@ -1,0 +1,98 @@
+{
+	"general": {
+		"signin": "Logged in successfully",
+		"signout": "Logged out successfully"
+	},
+	"menu": {
+		"home": "Home",
+		"hosting": "Hosting",
+		"domain": "Domains",
+		"contact": "Contact",
+		"about": "About",
+		"dashboard": "Dashboard",
+		"login": "Login",
+		"logout": "Logout"
+	},
+	"footer": "UPCE",
+	"page": {
+		"unavailable": "We're sorry, this website is not\navailable at this time",
+		"hosting": {
+			"header": "Explore our hosting plans\nand choose the one that's right for you!",
+			"leading": "Our hosting plans are designed to provide optimal performance, security, and reliability for your website. We use the latest technology and hardware to ensure that your site runs smoothly, even during traffic spikes or unexpected downtime. Whether you're launching a personal blog, an online store, or a corporate website, we've got a plan that will fit your needs. Get started and take the next step in building your online presence.",
+			"support-header": "Stuck while choosing?",
+			"support-leading": "Our specialists are happy to advise you 25 hours a day, 7 days a week, 365 days a year. And don't worry, they are used to unusual questions.",
+			"contact": "Contact us anytime"
+		},
+		"home": {
+			"welcome": "Prepare for takeoff: \nA runway for your online ideas",
+			"leading": "Choose a Domain and Experience the Ultimate Hosting Solution: Lightning Speed,\nIronclad Security, and 25/7 Support",
+			"check": "Check availability",
+			"check-placeholder": "yournewdomain.com",
+			"product_web": {
+				"header": "Basic hosting",
+				"leading": "Looking for a simple, reliable, and affordable solution? Our Basic hosting plan is the perfect choice for simple websites, with fast page load times, and easy-to-use control panel, you'll have everything you need to get up and running in no time.",
+				"point1": "500MB of space",
+				"point2": "Postgres database",
+				"point3": "FTP server",
+				"point4": "SSL certificate",
+				"point5": "CZ domain one year free"
+			},
+			"product_mail": {
+				"header": "Mailboxes basic",
+				"leading": "Transform your email experience with our basic email plan - the perfect solution for individuals and small businesses. With lightning-fast email delivery, advanced spam filtering, you'll be able to communicate with ease and efficiency.",
+				"point1": "5 mailboxes",
+				"point2": "50 MB of space for each mailbox",
+				"point3": "Documents, calendars, contacts and tasks sharing",
+				"point4": "Daily backups",
+				"point5": "POP3/IMAP4/SMTP"
+			},
+			"from": "from",
+			"monthly": "monthly before VAT",
+			"monthlyVAT": "with VAT",
+			"more": "More information",
+			"order": "Order"
+		},
+		"login": {
+			"header": "Login",
+			"email": "Email",
+			"password": "Password",
+			"create": "Create account",
+			"recovery": "Forgot password?",
+			"submit": "Login",
+			"error": {
+				"INVALID_EMAIL": "Login failed. Please check your username and password.",
+				"INVALID_DETAILS": "Login failed. Please check your username and password."
+			}
+		},
+		"register": {
+			"header": "Create account",
+			"first_name": "First name",
+			"last_name": "Last name",
+			"password": "Password",
+			"email": "Email",
+			"display": "Username",
+			"phone": "Phone number",
+			"confirmation": "Confirm pasword",
+			"submit": "Register",
+			"back": "Already have an account",
+			"success": "Your account was successfully created, activate it through your email",
+			"error": {
+				"REGISTER_INVALID_EMAIL": "Entered email is not a valid email",
+				"REGISTER_USED_DISPLAY": "Entered username is already in use. Try a different one",
+				"REGISTER_PASSWORD_LENGTH": "Password is too short.",
+				"REGISTER_ALPHANUM_FIELDS": "First name, last name, or username contains invalid characters",
+				"REGISTER_REQUIRED_FIELDS": "A required field was not filled"
+			}
+		},
+		"recovery": {
+			"header": "Obnova hesla",
+			"email": "Email",
+			"info": "If you need any help relating to chaning your password, please, contact our customer support at dav.schwam@gmail.com or +420 702 873 719",
+			"submit": "Odeslat",
+			"success": "We sent you a recovery link to your email",
+			"error": {
+				"RECOVER_INVALID_EMAIL": "Entered email is not a valid email"
+			}
+		}
+	}
+}

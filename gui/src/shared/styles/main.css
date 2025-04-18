@@ -1,0 +1,54 @@
+@import "./form.css";
+
+@font-face {
+    font-display: swap;
+    font-family: customsans;
+    font-style: normal;
+    font-weight: 900;
+    src: local("customsans"),local("customsans"),url(../../../customsans.woff2) format("woff2");
+}
+
+.transform-center {
+    transform: translate(calc(50vw - 50%));
+}
+
+@keyframes MoveBackForth {
+	0% {
+	    left: 0%;
+        opacity: 0%;
+        transform: rotate(0deg);
+	}
+    10% {
+        opacity: 90%;
+    }
+    45% {
+        opacity: 0%;
+    }
+    49% {
+        transform: rotate(0deg);
+		left: 100%;
+    }
+	50% {
+        left: 0%;
+        transform: rotate(180deg);
+	}
+    51% {
+        opacity: 10%;
+    }
+    60% {
+        opacity: 90%;
+    }
+    95% {
+        transform: rotate(180deg);
+        opacity: 0%;
+    }
+	100% {
+        left: -100%;
+        opacity: 0%;
+        transform: rotate(0deg);
+	}
+}
+
+.airplane-line {
+    background: linear-gradient( 270deg, rgba(150,150,225,225) 0%, rgba(163, 57, 227, 0) 100% );
+}

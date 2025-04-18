@@ -1,0 +1,98 @@
+{
+	"general": {
+		"signin": "Přihlášení proběhlo úspěšně",
+		"signout": "Odhlášení proběhlo úspěšně"
+	},
+	"menu": {
+		"home": "Domů",
+		"hosting": "Webhosting",
+		"domain": "Domény",
+		"contact": "Kontakt",
+		"about": "O nás",
+		"dashboard": "Administrace",
+		"login": "Přihlásit se",
+		"logout": "Odhlásit se"
+	},
+	"footer": "UPCE",
+	"page": {
+		"unavailable": "Omlouváme se, tato stránka není v tuto\nchvíli k dispozici.",
+		"hosting": {
+			"header": "Prozkoumejte naše hostingové plány a\nvyberte si ten pravý pro vás!",
+			"leading": "Naše hostingové plány jsou navrženy tak, aby poskytovaly optimální výkon, bezpečnost a spolehlivost vašeho webu. Používáme nejnovější technologie a hardware, abychom zajistili, že váš web bude fungovat hladce, a to i během špiček provozu nebo neočekávaných prostojů. Ať už spouštíte osobní blog, internetový obchod nebo firemní web, máme plán, který bude vyhovovat vašim potřebám. Začněte a udělejte další krok v budování své online přítomnosti.",
+			"support-header": "Zasekli jste se při výběru?",
+			"support-leading": "Naši specialisti vám ochotně poradí 25 hodin denně, 7 dní v týdnu, 365 dní v roce. A bez obav, na nezvyklé otázky jsou zvyklí.",
+			"contact": "Ozvěte se nám kdykoliv"
+		},
+		"home": {
+			"welcome": "Připravte se na vzlet: \nRozjezdová dráha pro vaše online nápady.",
+			"leading": "Vyberte si doménu a zažijte konečné řešení hostingu: Blesková rychlost,\nneprorazitelná bezpečnost a podpora 25/7.",
+			"check": "Ověřit dostupnost",
+			"check-placeholder": "vasnovyweb.cz",
+			"product_web": {
+				"header": "Základní hosting",
+				"leading": "Hledáte jednoduché, spolehlivé a cenově dostupné řešení? Náš základní hostingový plán je perfektní volbou pro váš web, s rychlým načítáním a snadno použitelným ovládacím panelem, budete mít vše, co potřebujete, abyste se začali.",
+				"point1": "500MB prostoru",
+				"point2": "Postgres databáze",
+				"point3": "FTP server",
+				"point4": "SSL cerifikát",
+				"point5": "CZ doména na rok zdarma"
+			},
+			"product_mail": {
+				"header": "E-mailové schránky",
+				"leading": "Transformujte svůj emailový zážitek s našimi emailovými schránkami - dokonalé řešení pro jednotlivce i malé firmy. S bleskovou rychlostí a pokročilými filtry na spam, budete moci komunikovat snadno a efektivně.",
+				"point1": "5 schránek",
+				"point2": "50 MB prostoru pro každou schránky",
+				"point3": "Dockumenty, kalendář, kontakty",
+				"point4": "Zálohování denně",
+				"point5": "POP3/IMAP4/SMTP"
+			},
+			"from": "už od",
+			"monthly": "měsíčně bez DPH",
+			"monthlyVAT": "s DPH",
+			"more": "Více informací",
+			"order": "Objednat"
+		},
+		"login": {
+			"header": "Přihlášení",
+			"email": "Email",
+			"password": "Heslo",
+			"create": "Vytvořit účet",
+			"recovery": "Zapomněl/a jsem ůdaje",
+			"submit": "Přihlásit se",
+			"error": {
+				"INVALID_EMAIL": "Přihlášení se nepodařilo. Zkontrolujte si uživatelské jméno a heslo.",
+				"INVALID_DETAILS": "Přihlášení se nepodařilo. Zkontrolujte si uživatelské jméno a heslo."
+			}
+		},
+		"register": {
+			"header": "Vytvoření účtu",
+			"first_name": "Křestní jméno",
+			"last_name": "Příjmení",
+			"password": "Heslo",
+			"display": "Uživatelské jméno",
+			"email": "Email",
+			"phone": "Telefonní číslo",
+			"confirmation": "Heslo znovu",
+			"submit": "Registrovat se",
+			"back": "Účet mám",
+			"success": "Uživatel byl uspěšně vytvořen, aktivujte si ho přes email",
+			"error": {
+				"REGISTER_INVALID_EMAIL": "Zadaný email nemá platný formát emailu",
+				"REGISTER_USED_DISPLAY": "Zadané uživatelské jméno už existuje. Použijte jiné",
+				"REGISTER_PASSWORD_LENGTH": "Heslo, které jste zadali je moc krátké",
+				"REGISTER_ALPHANUM_FIELDS": "Křestní jméno, přijmení nebo uživatelské jméno obsahuje neplatné znaky",
+				"REGISTER_REQUIRED_FIELDS": "Povinné položka není vyplněna"
+			}
+		},
+		"recovery": {
+			"header": "Obnova hesla",
+			"email": "Email",
+			"info": "V případě, že se změnou hesla potřebujete poradit, kontaktujte naši zákaznickou podporu na adrese dav.schwam@gmail.cz nebo telefonicky na +420 702 873 719.",
+			"submit": "Odeslat",
+			"success": "Odkaz pro obnovení hesla jsme vám poslali na email",
+			"error": {
+				"RECOVER_INVALID_EMAIL": "Zadaný email nemá platný formát emailu"
+			}
+		}
+	}
+}
