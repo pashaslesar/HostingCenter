@@ -4,12 +4,16 @@ RUN apk update && apk add \
     curl php php-cli php-json php-curl php-phar php-mbstring php-openssl \
     php-pdo php-pdo_mysql nodejs npm
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# GUI сборка
 WORKDIR /opt/gui
 COPY ./gui /opt/gui
 RUN npm i && npm run build
+
+# PHP приложение
 WORKDIR /opt/app
 COPY ./app /opt/app
-RUN composer install
+RUN composer install --no-interaction --optimize-autoloader
+
 
 ###########################################
 FROM alpine:latest as environment
