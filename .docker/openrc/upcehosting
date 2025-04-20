@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+name="upcehosting"
+description="My worker script"
+PIDFILE="/var/run/upcehosting.pid"
+DAEMON="/usr/bin/php"
+DAEMON_OPTS="/opt/app/worker/HostingWorker.php"
+START_OPTS="--start --background -m --pidfile ${PIDFILE} --exec ${DAEMON} ${DAEMON_OPTS}"
+STOP_OPTS="--stop --pidfile ${PIDFILE}"
+
+depend() {
+    need postgresql
+    need dnsmasq
+    need redis
+}
+
+start_pre() {
+    /bin/sh /opt/init.sh
+}
+
+stop_post() {
+    rm -f "${PIDFILE}"
+}
+
+start() {
+    ebegin "Starting ${name}"
+    start-stop-daemon $START_OPTS
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping ${name}"
+    start-stop-daemon $STOP_OPTS
+    eend $?
+}
