@@ -6,6 +6,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "21:21"       # FTP
+      - "20:20"       # FTP data transfer
+      - "21100-21110:21100-21110"  # Passive ports
     volumes:
       # - .:/opt/app
       - ./.docker/www:/var/www
