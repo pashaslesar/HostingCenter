@@ -77,7 +77,7 @@ export default function Hosting() {
                             <div data-status={hosting[key].databases[0].status} style={cardStyle}>
                                 <div style={cardTitle}>Database</div>
                                 <div>Status: {hosting[key].databases[0].status}</div>
-                                <div>Database: {hosting[key].hostings[0].domain}{hosting[key].hostings[0].tld} | {hosting[key].hostings[0].ftp}</div>
+                                <div>Database: {hosting[key].databases[0].domain}{hosting[key].databases[0].tld} | {hosting[key].databases[0].db}</div>
                             </div>
                         )}
                     </div>
