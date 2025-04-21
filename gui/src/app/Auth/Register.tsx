@@ -36,41 +36,41 @@ export default function Register() {
       <section className="order">
         <img src="/images/line.png" alt="čára" className="line" />
         <div className="container">
-          <div className="common-title">{t("page.register.header")}</div>
+          <div className="common-title">{t("Založení učtu")}</div>
           <img src="/images/breadcrumbs.png" alt="drobečky" className="order-bg-image" />
 
           <div className="order-block">
             <div className="order-form">
               <form onSubmit={handleSubmit(create)} className="order-form-inputs">
 
-                <input type="text" placeholder={t("page.register.first_name")} {...register("first_name", { required: true })} />
+                <input type="text" placeholder={t("Jméno")} {...register("first_name", { required: true })} />
                 {errors.first_name && <span className="text-xs text-red-500">Required</span>}
 
-                <input type="text" placeholder={t("page.register.last_name")} {...register("last_name", { required: true })} />
+                <input type="text" placeholder={t("Přijmení")} {...register("last_name", { required: true })} />
                 {errors.last_name && <span className="text-xs text-red-500">Required</span>}
 
-                <input type="text" placeholder={t("page.register.display")} {...register("display", { required: true })} />
+                <input type="text" placeholder={t("Username")} {...register("display", { required: true })} />
                 {errors.display && <span className="text-xs text-red-500">Required</span>}
 
-                <input type="email" placeholder={t("page.register.email")} {...register("email", { required: true })} />
+                <input type="email" placeholder={t("Email")} {...register("email", { required: true })} />
                 {errors.email && <span className="text-xs text-red-500">Required</span>}
 
-                <input type="text" placeholder={t("page.register.phone")} {...register("phone")} />
+                <input type="text" placeholder={t("Telefonní číslo")} {...register("phone")} />
 
-                <input type="password" placeholder={t("page.register.password")} {...register("password", { required: true })} />
+                <input type="password" placeholder={t("Heslo")} {...register("password", { required: true })} />
                 {errors.password && <span className="text-xs text-red-500">Required</span>}
 
-                <input type="password" placeholder={t("page.register.confirmation")} {...register("confirmation", {
+                <input type="password" placeholder={t("Confirm password")} {...register("confirmation", {
                   required: true,
                   validate: { confirmation }
                 })} />
                 {errors.confirmation?.type === "required" && <span className="text-xs text-red-500">Required</span>}
                 {errors.confirmation?.type === "confirmation" && <span className="text-xs text-red-500">Passwords must match</span>}
 
-                <button className="button violet-button" type="submit">{t("page.register.submit")}</button>
+                <button className="button violet-button" type="submit">{t("Registrace")}</button>
 
-                <NavLink to={"/auth/login?" + searchParams.toString()} className="mt-2 text-white text-sm underline hover:no-underline">
-                  {t("page.register.back")}
+                <NavLink to="/auth/login?" className="button" style={{ width: "387px", height: "71px", marginTop: "16px", textAlign: "center", display: "block", lineHeight: "35px" }}>
+                  Zpět na přihlášení
                 </NavLink>
               </form>
             </div>
