@@ -144,10 +144,11 @@ body {
     margin-top: 14px;
     font-size: 18px;
     line-height: 130%;
+    text-align: center;
 }
 
 .line {
-    margin-top: 600px;
+    margin-top: 500px;
     position: absolute;
     z-index: -1;
     top: -920px;

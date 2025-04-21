@@ -1,58 +1,59 @@
-import React, { useState } from "react";
-import "../../styles.css"; // стили подключены верно
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../shared/store/auth";
+import "../../styles.css";
 
 const Home = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const isLoggedIn = user !== null;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Заказ отправлен:\nJméno: ${username}\nEmail: ${email}`);
+  const handleStart = () => {
+    if (isLoggedIn) {
+      navigate("/dashboard/hosting");
+    } else {
+      navigate("/auth/login");
+    }
   };
 
   return (
-    <>
-      <section className="order">
-        <img src="/images/line.png" alt="čára" className="line" />
-        <div className="container">
-          <div className="common-title">Objednejte si doménu</div>
-          <img src="/images/breadcrumbs.png" alt="navigační drobečky" className="order-bg-image" />
-          <div className="order-block">
-            <div className="order-form">
-              <div className="order-form-text">
-                Objednejte si naši zasranou doménu. Pak vám ji ukradneme. Sušenky jako dárek.
-              </div>
-              <div className="order-form-inputs">
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    name="username"
-                    placeholder="Vaše jméno"
-                    autoComplete="name"
-                    required
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Váš e-mail"
-                    autoComplete="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <button className="button violet-button" type="submit">Koupit</button>
-                </form>
-              </div>
+    <section className="order">
+      <img src="/images/line.png" alt="čára" className="line" />
+
+      <div className="container">
+        <div className="common-title">Objednejte si doménu</div>
+
+        <img
+          src="/images/breadcrumbs.png"
+          alt="navigační drobečky"
+          className="order-bg-image"
+        />
+
+        <div className="order-block">
+          <div className="order-form">
+            <div className="order-form-text">
+              Vítejte na stránkách <strong>UPCE Hosting</strong>!<br />
+              Nabízíme vám možnost snadno a rychle vytvořit vlastní hosting, doménu a databázi v rámci univerzitního prostředí.
+              <br /><br />
+              Vše běží automaticky, přehledně a v moderním designu.
+              <br /><br />
+              🍪 Hosting zdarma pro studenty. A sušenky navrch.
             </div>
-            <div className="order-block-image">
-              <img src="/images/order.png" alt="Sušenky" className="order-image" />
+
+            <div style={{ marginTop: "32px" }}>
+              <button className="button violet-button" onClick={handleStart}>
+                Začít zdarma
+              </button>
             </div>
           </div>
+
+          <div className="order-block-image">
+            <img src="/images/order.png" alt="Sušenky" className="order-image" />
+          </div>
         </div>
-      </section>
-    </>
+        <div className="rights">Všechna práva nejsou chráněna</div>
+      </div>
+    </section>
   );
 };
 

@@ -3,7 +3,6 @@ import Footer from "../shared/components/Footer";
 import Header from "../shared/components/Header";
 import Toasts from "../shared/components/Toasts";
 import { Lazy } from "../shared/components/Routing";
-import { OrderPage } from "../app/OrderPage";
 
 export default function App() {
 	return (
@@ -15,7 +14,6 @@ export default function App() {
 					<Route path="/auth/*" element={<Lazy path="Auth"/>} />
 					<Route path="/cart/*" element={<Lazy path="Cart"/>} />
 					<Route path="/*" element={<Lazy path="Public"/>}/>
-					<Route path="/order" element={<OrderPage />} />
 				</Routes>
 			</main>
 			<Toasts/>
