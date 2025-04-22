@@ -18,6 +18,14 @@ services:
       - ./.docker/nginx/http.d:/etc/nginx/http.d
       - ./.docker/vsftpd/virtual_users:/etc/vsftpd/virtual_users
       - ./.docker/vsftpd/user_confs:/etc/vsftpd/vusers
+            
+      # vsftpd
+      - ./.docker/vsftpd/virtual_users:/etc/vsftpd/virtual_users
+      - ./.docker/vsftpd/user_confs:/etc/vsftpd/vusers
+      - ./.docker/vsftpd/vsftpd.conf:/etc/vsftpd/vsftpd.conf
+      - ./.docker/vsftpd/vsftpd.virtual:/etc/pam.d/vsftpd.virtual
+      - ./.docker/vsftpd/pam_pwdfile.so:/lib/security/pam_pwdfile.so
+
     depends_on:
       - mysql
       - redis
