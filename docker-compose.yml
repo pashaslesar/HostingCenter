@@ -6,6 +6,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "21:21"       # FTP
+      - "20:20"       # FTP data transfer
+      - "21100-21110:21100-21110"  # Passive ports
     volumes:
       # - .:/opt/app
       - ./.docker/www:/var/www
@@ -14,6 +17,7 @@ services:
       - ./.docker/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./.docker/nginx/http.d:/etc/nginx/http.d
       - ./.docker/vsftpd/virtual_users:/etc/vsftpd/virtual_users
+      - ./.docker/vsftpd/user_confs:/etc/vsftpd/vusers
     depends_on:
       - mysql
       - redis
