@@ -8,23 +8,23 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /opt/gui
 COPY ./gui /opt/gui
 RUN npm i && npm run build
-
+ 
 # PHP приложение
 WORKDIR /opt/app
 COPY ./app /opt/app
 RUN composer install --no-interaction --optimize-autoloader
-
-
+ 
+ 
 ###########################################
 FROM alpine:latest as environment
-
+ 
 RUN apk update && apk add --no-cache \
     redis nginx dnsmasq vsftpd openssl php php-fpm php-json \
     php-pdo_pgsql php-pgsql php-pdo_mysql php-mysqli php-openssl \
     php-mbstring php-iconv php-pdo php-pcntl php-posix php-session \
     postgresql openrc \
     && adduser -D -h /var/www ftp
-
+ 
 COPY ./.docker/dnsmasq/priority.hosts.dat /etc/dnsmasq.d/priority.hosts.dat
 COPY ./.docker/dnsmasq/users.hosts.dat /etc/dnsmasq.d/users.hosts.dat
 COPY ./.docker/dnsmasq/dnsmasq.conf /etc/dnsmasq.d/dnsmasq.conf
@@ -36,13 +36,13 @@ COPY ./.docker/vsftpd/virtual_users /etc/vsftpd/virtual_users
 COPY ./.docker/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf
 COPY ./.docker/openrc/init.sh /opt/init.sh
 COPY ./.docker/openrc/upcehosting /etc/init.d/upcehosting
-
-
+ 
+ 
 COPY --from=builder /opt/gui/dist /opt/gui
 COPY --from=builder /opt/app /opt/app
-
-
-
+ 
+ 
+ 
 RUN rc-update add nginx default && \
     rc-update add postgresql default && \
     rc-update add dnsmasq default && \
@@ -50,5 +50,6 @@ RUN rc-update add nginx default && \
     rc-update add php-fpm83 default && \
     rc-update add redis default && \
     rc-update add upcehosting default
-
+ 
 CMD ["/sbin/init"]
+ 

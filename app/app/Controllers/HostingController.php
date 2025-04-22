@@ -12,6 +12,7 @@ use Ramsey\Uuid\Uuid;
 use App\Hosting\Status as HostingStatus;
 use App\Models\Database;
 use App\Models\Domain;
+use Worker\DatabaseManager;
 
 class HostingController {
 
@@ -60,19 +61,24 @@ class HostingController {
 		$domain->user()->associate($user);
 		$domain->save();
 
+		$password = DatabaseManager::generatepassword();
+
 		$db = new Database();
 		$db->uuid = Uuid::uuid4();
 		$db->domain = $domainwithtld[0];
 		$db->tld = $domainwithtld[1];
 		$db->status = HostingStatus::Creating->value;
+		$db->db = $password; 
 		$db->user()->associate($user);
 		$db->save();
+
 
 		$dbMessage = [
 			"operation" => "Worker\\DatabaseManager::createDatabase",
 			"args" => [
 				"domain" => $domainwithtld[0],
-				"tld" => $domainwithtld[1]
+				"tld" => $domainwithtld[1],
+				"password" => $password 
 			]
 		];
 		
