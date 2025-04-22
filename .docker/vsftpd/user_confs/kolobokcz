@@ -1,0 +1,2 @@
+local_root=/var/www/kolobokcz
+write_enable=YES
