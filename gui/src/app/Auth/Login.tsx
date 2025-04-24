@@ -55,10 +55,10 @@ export default function Login() {
                   <button className="button violet-button" type="submit">
                     Přihlásit se
                   </button>
+                  <NavLink to="/auth/register" className="button" style={{ width: "387px", height: "71px", marginTop: "16px", textAlign: "center", display: "block", lineHeight: "35px" }}>
+                    Vytvořit účet
+                  </NavLink>
                 </form>
-                <NavLink to="/auth/recovery" className="mt-2 underline hover:no-underline">
-                  Zapomněli jste heslo?
-                </NavLink>
               </div>
             </div>
             <div className="order-block-image">

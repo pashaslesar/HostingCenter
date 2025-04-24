@@ -9,7 +9,7 @@ class DatabaseManager {
     public static function createDatabase($args) {
         $dbName = $args['domain'] . "_" . $args['tld'];
         $dbUser = $args['domain'] . $args['tld'];
-        $password = self::generatepassword();
+        $password = $args['password'] ?? self::generatepassword();
     
         try {
             $pdo = new \PDO("mysql:host=mysql;port=3306;charset=utf8mb4", 'root', 'rootpass');
