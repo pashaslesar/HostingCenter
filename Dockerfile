@@ -22,8 +22,8 @@ RUN apk update && apk add --no-cache \
     redis nginx dnsmasq vsftpd openssl php php-fpm php-json \
     php-pdo_pgsql php-pgsql php-pdo_mysql php-mysqli php-openssl \
     php-mbstring php-iconv php-pdo php-pcntl php-posix php-session \
-    postgresql openrc \
-    && adduser -D -h /var/www ftp
+    postgresql openrc 
+    # \&& adduser -D -h /var/www ftp
  
 COPY ./.docker/dnsmasq/priority.hosts.dat /etc/dnsmasq.d/priority.hosts.dat
 COPY ./.docker/dnsmasq/users.hosts.dat /etc/dnsmasq.d/users.hosts.dat
