@@ -22,6 +22,9 @@ class HttpManager {
     }
 
     public static function createHttpFile($args): bool {
+        $logPath = "/var/log/upcehosting.log";
+        file_put_contents($logPath, "📦 Начинаем createHttpFile для " . json_encode($args) . "\n", FILE_APPEND);
+    
         $domain = $args["domain"];
         $tld = $args["tld"];
     
@@ -36,6 +39,8 @@ class HttpManager {
     EOD;
     
         $destination_name = "/etc/nginx/http.d/$domain.conf";
+        file_put_contents($logPath, "📝 Создаём файл конфига: $destination_name\n", FILE_APPEND);
+    
         $destination_file = fopen($destination_name, "w");
         if (flock($destination_file, LOCK_EX)) {
             fwrite($destination_file, $template);
@@ -45,11 +50,11 @@ class HttpManager {
         }
         fclose($destination_file);
     
+        file_put_contents($logPath, "📁 Создаём директорию: /var/www/$domain$tld\n", FILE_APPEND);
         mkdir("/var/www/$domain$tld", 0777, true);
         chown("/var/www/$domain$tld", "ftp");
         chgrp("/var/www/$domain$tld", "ftp");
     
-        // ✨ Автоматически создаём простой index.html
         file_put_contents("/var/www/$domain$tld/index.html", "
     <!DOCTYPE html>
     <html lang=\"en\">
@@ -65,9 +70,19 @@ class HttpManager {
     ");
     
         $ftppassword = self::generatepassword();
-        FtpManager::addRecord($domain . $tld, $ftppassword);
+        file_put_contents($logPath, "🔐 Генерируем FTP-пароль: $ftppassword\n", FILE_APPEND);
+    
+        try {
+            file_put_contents($logPath, "📡 Добавляем FTP-пользователя...\n", FILE_APPEND);
+            FtpManager::addRecord($domain . $tld, $ftppassword);
+            file_put_contents($logPath, "✅ FTP-пользователь создан\n", FILE_APPEND);
+        } catch (\Throwable $e) {
+            file_put_contents($logPath, "❌ Ошибка FTP: " . $e->getMessage() . "\n", FILE_APPEND);
+            throw new Exception("Failed to create FTP user: " . $e->getMessage());
+        }
     
         self::refreshServer();
+        file_put_contents($logPath, "🔄 Nginx обновлён\n", FILE_APPEND);
     
         Hosting::where([
             ['domain', '=', $domain],
@@ -77,8 +92,11 @@ class HttpManager {
             "ftp" => $ftppassword
         ]);
     
+        file_put_contents($logPath, "✅ БД обновлена для $domain.$tld\n", FILE_APPEND);
+    
         return true;
     }
+    
     
 
     public static function generatepassword(): string {

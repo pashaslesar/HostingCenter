@@ -1,0 +1,2 @@
+local_root=/var/www/chlebcz
+write_enable=YES
